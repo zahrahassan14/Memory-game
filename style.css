@@ -1,0 +1,108 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #41a1c1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.wrapper {
+    box-sizing: border-box;
+    width: 30em;
+    max-width: 100%;
+    padding: 2.5em;
+    background-color: #ffffff;
+    border-radius: 0.5em;
+    box-shadow: 0 0.9em 2.5em rgba(86, 66, 0, 0.2);
+    position: relative;
+    text-align: center;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    display: grid;
+    gap: 0.6em;
+}
+
+.card-container {
+    position: relative;
+    width: 6.25em;
+    height: 6.25em;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card-container.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-before,
+.card-after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    border: 1px solid #ccc;
+}
+
+.card-before {
+    background-color: #f1f1f1;
+}
+
+.card-after {
+    transform: rotateY(180deg);
+    background-color: #fff;
+}
+
+.card-container.matched .card-before {
+    background-color: #9c9;
+    border: 1px solid #6a6;
+    cursor: default;
+}
+
+.card-after img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    color: #fff;
+    background-color: #41a1c1;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+button.hide {
+    display: none;
+}
+
+button:hover {
+    background-color: #3590aa;
+}
